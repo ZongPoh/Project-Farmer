@@ -1,0 +1,46 @@
+{
+  "//": [
+    "THIS IS A LINTER, NOT A MIGRATION. Nothing here is compiled and no .ts file",
+    "exists; TypeScript is used purely as a no-undef checker over plain",
+    "JavaScript, which is the one check this project has twice shipped without.",
+    "",
+    "`takeWarOrder` called `bestWeapon(...)` without importing it. Every test",
+    "passed, including `imports.test.mjs`, because an identifier that was never",
+    "imported is not a bad import \u00e2\u20ac\u201d it is a free variable, and nothing static",
+    "was looking. It surfaced in a scratch script. `smoke.test.mjs` was written",
+    "to catch that class at runtime by playing a few hundred days; this catches",
+    "it without running anything.",
+    "",
+    "`strict` is deliberately off. Turning it on means hundreds of errors about",
+    "implicit any, which is a different project entirely and would bury the one",
+    "class of error that has actually cost anything here.",
+    "",
+    "Run it with `npm run lint`."
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}

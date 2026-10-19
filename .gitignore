@@ -1,0 +1,39 @@
+# Reproduced exactly from package-lock.json. Never commit it.
+node_modules
+
+# Build output. GitHub Actions builds and publishes it (.github/workflows/pages.yml);
+# build output in git rots.
+dist
+
+.env
+.env.local
+
+# Logs and profiles
+*.log
+*.cpuprofile
+*.heapsnapshot
+coverage/
+
+# Captured output of `npm run check`, regenerated on demand.
+*-results.txt
+
+# Pre-change backups of the whole folder, taken before a pass. Large, and the
+# repository is the way back now.
+_*.tgz
+
+# NOTE: scratch/ is deliberately NOT ignored. It holds the headless measuring
+# scripts (horsediag, popgraph, campgrowth, growth) that docs/13 cites by name
+# as the evidence for every balance claim in that pass. A number nobody can
+# reproduce is not a measurement.
+
+# Editors and operating systems
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Where this session writes files across; not part of the project.
+Claude outputs/
+
+.npm-cache/
